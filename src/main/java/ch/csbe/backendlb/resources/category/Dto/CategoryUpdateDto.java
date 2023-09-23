@@ -7,22 +7,33 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import io.swagger.v3.oas.annotations.media.Schema;
 
+/**
+ * Data Transfer Object (DTO) for updating a category.
+ */
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "DTO für das Aktualisieren einer Kategorie")
+@Schema(description = "DTO for updating a category")
 public class CategoryUpdateDto {
+
+    /**
+     * Unique identification number of the category.
+     */
     @NotNull
-    @Schema(description = "Einzigartige Identifikationsnummer der Kategorie")
+    @Schema(description = "Unique identification number of the category")
     private Long id;
 
-    @Schema(description = "Aktivitätsstatus der Kategorie")
+    /**
+     * Activity status of the category.
+     */
+    @Schema(description = "Activity status of the category")
     private int active;
 
+    /**
+     * New name for the category.
+     */
     @NotNull
-    @Schema(description = "Neuer Name der Kategorie")
+    @Schema(description = "New name for the category")
     private String name;
 }
-
-

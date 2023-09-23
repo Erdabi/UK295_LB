@@ -6,41 +6,84 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Data Transfer Object (DTO) for creating a category.
+ */
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "DTO für das Erstellen einer Kategorie")
+@Schema(description = "DTO for creating a category")
 public class CategoryCreateDto {
-    @Schema(description = "Einzigartige Identifikationsnummer der Kategorie")
+
+    /**
+     * Unique identification number of the category.
+     */
+    @Schema(description = "Unique identification number of the category")
     private Long id;
 
-    @Schema(description = "Aktivitätsstatus der Kategorie")
+    /**
+     * Activity status of the category.
+     */
+    @Schema(description = "Activity status of the category")
     private int active;
 
-    @Schema(description = "Name der Kategorie")
+    /**
+     * Name of the category.
+     */
+    @Schema(description = "Name of the category")
     private String name;
 
+    /**
+     * Get the unique identification number of the category.
+     *
+     * @return The unique identification number of the category.
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Set the unique identification number of the category.
+     *
+     * @param id The unique identification number of the category.
+     */
     public void setId(Long id) {
         this.id = id;
     }
 
+    /**
+     * Get the activity status of the category.
+     *
+     * @return The activity status of the category.
+     */
     public int getActive() {
         return active;
     }
 
+    /**
+     * Set the activity status of the category.
+     *
+     * @param active The activity status of the category.
+     */
     public void setActive(int active) {
         this.active = active;
     }
 
+    /**
+     * Get the name of the category.
+     *
+     * @return The name of the category.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Set the name of the category.
+     *
+     * @param name The name of the category.
+     */
     public void setName(String name) {
         this.name = name;
     }
