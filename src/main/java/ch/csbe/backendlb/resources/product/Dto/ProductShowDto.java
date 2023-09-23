@@ -8,36 +8,64 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import io.swagger.v3.oas.annotations.media.Schema;
 
+/**
+ * A data transfer object (DTO) for displaying a product.
+ */
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "DTO für die Anzeige eines Produkts")
+@Schema(description = "DTO for displaying a product")
 public class ProductShowDto {
+
+    /**
+     * The unique identification number of the product.
+     */
     @NotNull
-    @Schema(description = "Einzigartige Identifikationsnummer des Produkts")
+    @Schema(description = "Unique identification number of the product")
     private Long id;
 
-    @Schema(description = "Artikelnummer (SKU) des Produkts")
+    /**
+     * The article number (SKU) of the product.
+     */
+    @Schema(description = "Article number (SKU) of the product")
     private String sku;
 
+    /**
+     * The name of the product.
+     */
     @NotNull
-    @Schema(description = "Name des Produkts")
+    @Schema(description = "Name of the product")
     private String name;
 
-    @Schema(description = "URL des Produktbilds")
+    /**
+     * The URL of the product image.
+     */
+    @Schema(description = "URL of the product image")
     private String image;
 
-    @Schema(description = "Beschreibung des Produkts")
+    /**
+     * The description of the product.
+     */
+    @Schema(description = "Description of the product")
     private String description;
 
+    /**
+     * The price of the product.
+     */
     @NotNull
-    @Schema(description = "Preis des Produkts")
+    @Schema(description = "Price of the product")
     private Double price;
 
-    @Schema(description = "Lagerbestand des Produkts")
+    /**
+     * The stock quantity of the product.
+     */
+    @Schema(description = "Stock quantity of the product")
     private Integer stock;
 
-    @Schema(description = "Kategorie des Produkts")
+    /**
+     * The category of the product.
+     */
+    @Schema(description = "Category of the product")
     private Category category;
 }
