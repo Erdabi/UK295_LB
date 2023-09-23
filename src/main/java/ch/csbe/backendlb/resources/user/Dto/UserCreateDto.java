@@ -7,45 +7,49 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.Date;
 import io.swagger.v3.oas.annotations.media.Schema;
+
+/**
+ * DTO for creating a new user.
+ */
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "DTO für das Erstellen eines Benutzers")
+@Schema(description = "DTO for creating a new user")
 public class UserCreateDto {
     @NotNull
-    @Schema(description = "Einzigartige Identifikationsnummer des Benutzers")
+    @Schema(description = "Unique identification number of the user")
     private Long id;
 
     @NotNull
-    @Schema(description = "Benutzername")
+    @Schema(description = "Username of the user")
     private String username;
 
     @NotNull
-    @Schema(description = "Passwort")
+    @Schema(description = "Password of the user")
     private String password;
 
-    @Schema(description = "Nachname")
+    @Schema(description = "Last name of the user")
     private String surname;
 
-    @Schema(description = "Vorname")
+    @Schema(description = "First name of the user")
     private String lastname;
 
-    @Schema(description = "E-Mail-Adresse")
+    @Schema(description = "Email address of the user")
     private String email;
 
-    @Schema(description = "Geburtstag")
+    @Schema(description = "Birthday of the user")
     private Date birthday;
 
-    @Schema(description = "Straßenname")
+    @Schema(description = "Street name of the user's address")
     private String streetName;
 
-    @Schema(description = "Hausnummer")
+    @Schema(description = "House number of the user's address")
     private String streetNr;
 
-    @Schema(description = "Postleitzahl")
+    @Schema(description = "Zip code of the user's address")
     private String zipCode;
 
-    @Schema(description = "Stadt")
+    @Schema(description = "City of the user's address")
     private String city;
 }

@@ -11,16 +11,21 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
-
+/**
+ * Controller for managing user-related operations.
+ */
 @RequestMapping("/users")
 @RestController
 public class UserController {
 
-
-
     @Autowired
     private UserServiceImpl userService;
 
+    /**
+     * Retrieve a list of all users.
+     *
+     * @return A list of users.
+     */
     @GetMapping()
     @Operation(
             summary = "Holen Sie alle Benutzer",
@@ -41,6 +46,12 @@ public class UserController {
         }
     }
 
+    /**
+     * Create a new user.
+     *
+     * @param user The user to create.
+     * @return The created user.
+     */
     @PostMapping()
     @Operation(
             summary = "Erstellen Sie einen neuen Benutzer",
@@ -65,6 +76,12 @@ public class UserController {
         }
     }
 
+    /**
+     * Check if the user is valid.
+     *
+     * @param user The user to validate.
+     * @return True if the user is valid, false otherwise.
+     */
     private boolean isValidUser(User user) {
         if (user == null) {
             return false;
@@ -77,7 +94,12 @@ public class UserController {
         return user.getPassword() != null && !user.getPassword().isEmpty();
     }
 
-
+    /**
+     * Retrieve a user by ID.
+     *
+     * @param id The ID of the user to retrieve.
+     * @return The user with the specified ID if found, or 404 if not found.
+     */
     @GetMapping("/{id}")
     @Operation(
             summary = "Holen Sie einen Benutzer anhand seiner ID",
@@ -103,6 +125,13 @@ public class UserController {
         }
     }
 
+    /**
+     * Update a user by ID.
+     *
+     * @param id    The ID of the user to update.
+     * @param user  The updated user information.
+     * @return The updated user if successful, or 404 if not found.
+     */
     @PutMapping("/{id}")
     @Operation(
             summary = "Aktualisieren Sie einen Benutzer anhand seiner ID",
@@ -129,6 +158,12 @@ public class UserController {
         }
     }
 
+    /**
+     * Delete a user by ID.
+     *
+     * @param id The ID of the user to delete.
+     * @return 204 if successful, or 404 if not found.
+     */
     @DeleteMapping("/{id}")
     @Operation(
             summary = "Löschen Sie einen Benutzer anhand seiner ID",
@@ -152,6 +187,11 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
+    /**
+     * Register a new user.
+     *
+     * @return A message indicating user registration.
+     */
     @PostMapping("/user/register")
     @Operation(
             summary = "Registrieren Sie einen neuen Benutzer",
@@ -162,6 +202,12 @@ public class UserController {
         return ResponseEntity.ok("Hier kann sich ein Benutzer registrieren");
     }
 
+    /**
+     * Assign administrator rights to a user.
+     *
+     * @param userId The ID of the user to assign administrator rights to.
+     * @return A message indicating the assignment of administrator rights.
+     */
     @PutMapping("/users/assign-admin/{userId}")
     @Operation(
             summary = "Weisen Sie einem Benutzer Administratorrechte zu",
